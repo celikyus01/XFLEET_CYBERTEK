@@ -34,6 +34,8 @@ public abstract class  BasePage {
 
     @FindBy(xpath = "//button[@class='sidebar__add-widget']")
     public WebElement plusSign;
+    @FindBy(css = "div.modal-footer>a.btn.cancel")
+    public WebElement widgetsClose;
 
     @FindBy(xpath = "(//div//h3)[2]")
     public WebElement sidebarWidgets;
@@ -141,22 +143,6 @@ public abstract class  BasePage {
             String locatorwithButtonTag = "//button[contains(text(),"+buttonTitle+")]";
             Driver.get().findElement(By.xpath(locatorwithButtonTag)).click();
         }
-    }
-
-    /**
-     *
-     * @param inputBoxText: get the text value of the web element from html
-     * @param value : the string value that you want to sent
-     *
-     * Note: put some wait before first usage
-     */
-    public void sentKeysToInputBox(String inputBoxText, String value){
-
-
-        String locator = "//label[contains(text(),'"+inputBoxText+"')]/../..//input";
-
-        Driver.get().findElement(By.xpath(locator)).sendKeys(value);
-
     }
 
 
