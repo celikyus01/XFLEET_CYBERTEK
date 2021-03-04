@@ -228,6 +228,9 @@ public class BrowserUtils {
     public static void doubleClick(WebElement element) {
         new Actions(Driver.get()).doubleClick(element).build().perform();
     }
+    public static void singleClick(WebElement element) {
+        new Actions(Driver.get()).click(element).build().perform();
+    }
     /**
      * Changes the HTML attribute of a Web Element to the given value using JavaScript
      *
